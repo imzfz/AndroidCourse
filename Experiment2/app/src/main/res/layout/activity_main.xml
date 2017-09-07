@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="@string/user"
         android:id="@+id/user_text"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,9 +22,31 @@
         android:layout_height="wrap_content"
         android:id="@+id/user_name"
         android:text="null"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/user_text"
         app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tel"
+        android:id="@+id/tel_text"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/user_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tel_number"
+        android:text="12345678"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/user_name"
+        app:layout_constraintLeft_toRightOf="@id/tel_text"
         />
 
     <Button
@@ -31,7 +54,17 @@
         android:layout_width="wrap_content"
         android:id="@+id/btn"
         android:text="@string/edit_name"
-        app:layout_constraintTop_toBottomOf="@+id/user_text"
+        app:layout_constraintTop_toBottomOf="@+id/tel_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/edit_tel"
+        android:text="@string/edit_tel"
+        app:layout_constraintTop_toBottomOf="@+id/btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />

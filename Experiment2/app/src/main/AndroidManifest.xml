@@ -19,6 +19,8 @@
 
         <activity android:name=".EditName">
         </activity>
+        <activity android:name=".EditTel">
+        </activity>
     </application>
 
 </manifest>

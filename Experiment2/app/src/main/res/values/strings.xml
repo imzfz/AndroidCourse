@@ -2,5 +2,7 @@
     <string name="app_name">Experiment2</string>
     <string name="user">用户名:</string>
     <string name="edit_name">修改用户名</string>
+    <string name="tel">电话:</string>
+    <string name="edit_tel">修改电话</string>
     <string name="confirm">确定</string>
 </resources>
