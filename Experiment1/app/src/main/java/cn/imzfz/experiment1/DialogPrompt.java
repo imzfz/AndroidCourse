@@ -28,6 +28,7 @@ public class DialogPrompt  extends DialogFragment {
 
         builder.setView(view)
                 .setTitle("提示")
+                .setMessage("TEST")
                 .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //        Toast.makeText(getContext(), id, Toast.LENGTH_LONG).show();
