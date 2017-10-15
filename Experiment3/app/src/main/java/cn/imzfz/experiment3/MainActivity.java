@@ -9,7 +9,9 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Intent intent;
+    Intent call;
     Button button;
+    Button dial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         button = (Button)findViewById(R.id.btn);
+        dial = (Button)findViewById(R.id.dial);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent();
                 intent.setAction("startActivity");
                 startActivity(intent);
+            }
+        });
+
+        dial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                call = new Intent();
+                call.setAction(Intent.ACTION_DIAL);
+                startActivity(call);
             }
         });
     }
