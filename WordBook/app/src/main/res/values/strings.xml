@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WordBook</string>
+    <string name="today_word">今日单词</string>
+    <string name="word">word</string>
+    <string name="word_count">单词数</string>
+    <string name="today_add">今日添加</string>
+    <string name="add_word">添加生词 ></string>
+    <string name="open_book">我的单词 ></string>
+    <string name="change">换一个</string>
+    <string name="pronunciation">发音</string>
+    <string name="delete">从单词本删除</string>
+</resources>
