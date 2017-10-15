@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.imzfz.calculator.MainActivity">
+
+    <cn.imzfz.calculator.ShowView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:gravity="end"
+        android:paddingTop="5dp"
+        android:text="0"
+        android:maxLines="1"
+        android:maxLength="21"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <GridLayout
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:columnCount="10">
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag10"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/right"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag11"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/mc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag12"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/m1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag13"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/m2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag14"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/mr"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag15"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/ac"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag1"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/plus_minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag2"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/percent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#808080"
+            android:gravity="center"
+            android:text="@string/tag3"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/divide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_rowWeight="1"
+            android:background="#E66B1A"
+            android:gravity="center"
+            android:text="@string/tag4"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+        <!-- ================================= -->
+
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/x2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag17"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/x3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag18"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/xy"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag19"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/ex"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag20"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/temx"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag21"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num7"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num8"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num9"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/multiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_rowWeight="1"
+            android:background="#E66B1A"
+            android:gravity="center"
+            android:text="@string/tag5"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+
+        <!-- ================================= -->
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/x1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag22"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/sqrt2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag23"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/sqrt3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag24"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/ln"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag26"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/log10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag27"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num4"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num5"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num6"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_rowWeight="1"
+            android:background="#E66B1A"
+            android:gravity="center"
+            android:text="@string/tag6"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+
+        <!-- ================================= -->
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/xx"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag28"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/sin"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag29"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/cos"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag30"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/tan"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag31"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/e"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag32"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/pi"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowSpan="2"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag38"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <!--<cn.imzfz.calculator.KeyView
+            android:id="@+id/EE"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag33"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />-->
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num1"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num2"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num3"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/plus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_rowWeight="1"
+            android:background="#E66B1A"
+            android:gravity="center"
+            android:text="@string/tag7"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+        <!-- ================================= -->
+        <!--<cn.imzfz.calculator.KeyView
+            android:id="@+id/Rad"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag34"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/sinh"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag35"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/cosh"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag36"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/tanh"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag37"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />-->
+
+
+        <!--<cn.imzfz.calculator.KeyView
+            android:id="@+id/rand"
+            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:text="@string/tag39"
+            android:background="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            />-->
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/num0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/num0"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/dot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_rowWeight="1"
+            android:background="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/tag9"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <cn.imzfz.calculator.KeyView
+            android:id="@+id/is"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="1dp"
+            android:layout_rowWeight="1"
+            android:background="#E66B1A"
+            android:gravity="center"
+            android:text="@string/tag8"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+    </GridLayout>
+
+</LinearLayout>

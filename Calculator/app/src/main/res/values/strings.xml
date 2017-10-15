@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="num1">1</string>
+    <string name="num2">2</string>
+    <string name="num3">3</string>
+    <string name="num4">4</string>
+    <string name="num5">5</string>
+    <string name="num6">6</string>
+    <string name="num7">7</string>
+    <string name="num8">8</string>
+    <string name="num9">9</string>
+    <string name="num0">0</string>
+    <string name="tag1">AC</string>
+    <string name="tag2">+/-</string>
+    <string name="tag3">%</string>
+    <string name="tag4">÷</string>
+    <string name="tag5">x</string>
+    <string name="tag6">-</string>
+    <string name="tag7">+</string>
+    <string name="tag8">=</string>
+    <string name="tag9">.</string>
+    <string name="tag10">(</string>
+    <string name="tag11">)</string>
+    <string name="tag12">mc</string>
+    <string name="tag13">m+</string>
+    <string name="tag14">m-</string>
+    <string name="tag15">mr</string>
+    <string name="tag16">2nd</string>
+    <string name="tag17">x²</string>
+    <string name="tag18">x³</string>
+    <string name="tag19">x^y</string>
+    <string name="tag20">e^x</string>
+    <string name="tag21">10^x</string>
+    <string name="tag22">1/x</string>
+    <string name="tag23">²√</string>
+    <string name="tag24">³√</string>
+    <string name="tag25">y√</string>
+    <string name="tag26">ln</string>
+    <string name="tag27">log10</string>
+    <string name="tag28">x!</string>
+    <string name="tag29">sin</string>
+    <string name="tag30">cos</string>
+    <string name="tag31">tan</string>
+    <string name="tag32">e</string>
+    <string name="tag33">EE</string>
+    <string name="tag34">Rad</string>
+    <string name="tag35">sinh</string>
+    <string name="tag36">cosh</string>
+    <string name="tag37">tanh</string>
+    <string name="tag38">π</string>
+    <string name="tag39">Rand</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

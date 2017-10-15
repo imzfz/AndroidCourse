@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="items">
+        <item>千米</item>
+        <item>米</item>
+        <item>分米</item>
+        <item>厘米</item>
+        <item>毫米</item>
+        <item>微米</item>
+        <item>纳米</item>
+    </string-array>
+
+    <string-array name="binary">
+        <item>十进制</item>
+        <item>二进制</item>
+        <item>八进制</item>
+        <item>十六进制</item>
+    </string-array>
+
+    <string-array name="rate">
+        <item>欧元</item>
+        <item>英镑</item>
+        <item>港币</item>
+        <item>卢比</item>
+        <item>日元</item>
+        <item>韩元</item>
+        <item>澳门币</item>
+        <item>台币</item>
+        <item>美元</item>
+    </string-array>
+</resources>
