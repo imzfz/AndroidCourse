@@ -24,7 +24,7 @@ import java.util.Map;
 public class Translate implements Runnable{
     private static String phonetic = "";
     private static String appKey ="3800798914813276";
-    private static String query = "good";
+    private static String query = "";
     private static String salt = String.valueOf(System.currentTimeMillis());
     /*private static String from = "EN";
     private static String to = "zh-CHS";*/
@@ -33,21 +33,6 @@ public class Translate implements Runnable{
     private static String result = "";
 
     public Translate(String query){
-        /*String appKey ="3800798914813276";
-        String query = "good";
-        String salt = String.valueOf(System.currentTimeMillis());
-        String from = "EN";
-        String to = "zh-CHS";
-        String sign = md5(appKey + query + salt + "JpTknj63iWTxqh3llw7Yu1L7mor0cXlW");
-        Map<String, String> params = new HashMap<>();
-        query = encode(query);
-        params.put("q", query);
-        params.put("from", from);
-        params.put("to", to);
-        params.put("sign", sign);
-        params.put("salt", salt);
-        params.put("appKey", appKey);
-        test(getUrlWithQueryString("http://openapi.youdao.com/api", params));*/
         Translate.query = query;
     }
 
@@ -69,9 +54,10 @@ public class Translate implements Runnable{
      * 获取翻译结果
      */
     public static void getRes(String t){
-        JSONObject mainObject;
-        JSONObject basic;
-        JSONArray trans;
+        JSONObject mainObject = null;
+        JSONObject basic = null;
+        JSONArray trans = null;
+
         try {
             URL u = new URL(t);
             InputStream inn = u.openStream();
@@ -86,7 +72,14 @@ public class Translate implements Runnable{
             String res = new String(b, "utf-8");
             System.out.println(res);
             mainObject = new JSONObject(res);
-            basic = mainObject.getJSONObject("basic");
+            if(mainObject.has("basic")) {
+                basic = mainObject.getJSONObject("basic");
+            }
+            else {
+                trans = mainObject.getJSONArray("translation");
+                result = format(trans);
+                return;
+            }
             phonetic = basic.getString("phonetic");
             trans = basic.getJSONArray("explains");
             result = format(trans);

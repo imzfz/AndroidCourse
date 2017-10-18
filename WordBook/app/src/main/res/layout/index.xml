@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:background="#3d706e"
         android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:focusableInTouchMode="true"
         android:textColor="#000000"
         app:iconifiedByDefault="false"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -114,12 +114,11 @@
                 android:textColor="#000000"
                 android:textSize="20sp" />
 
-            <View
+           <!-- <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="#000000"
                 android:layout_gravity="center_horizontal"
-                />
+                android:background="#000000" />
 
             <TextView
                 android:id="@+id/delete"
@@ -131,11 +130,12 @@
                 android:gravity="center"
                 android:text="@string/delete"
                 android:textColor="#bebebe"
-                android:textSize="20sp" />
+                android:textSize="20sp" />-->
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/banner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="5sp"
@@ -181,7 +181,7 @@
                     android:layout_margin="10sp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="1"
+                    android:text="0"
                     android:textColor="#000000"
                     android:textSize="30sp"
                     app:layout_constraintLeft_toLeftOf="@+id/word_count"
@@ -194,7 +194,7 @@
                     android:layout_margin="10sp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="1"
+                    android:text=""
                     android:textColor="#000000"
                     android:textSize="30sp" />
 
@@ -243,19 +243,18 @@
                     android:textSize="20sp" />
             </LinearLayout>
         </android.support.constraint.ConstraintLayout>
-
-
-        <!--   <Button
-               android:id="@+id/open_book"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_gravity="center"
-               android:layout_marginTop="25dp"
-               android:background="@drawable/button"
-               android:gravity="center"
-               android:padding="20sp"
-               android:text="@string/open_book"
-               android:textSize="20sp" />-->
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:gravity="center"
+        android:padding="20sp"
+        android:text=" "
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

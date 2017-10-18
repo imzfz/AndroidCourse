@@ -2,6 +2,7 @@ package cn.imzfz.wordbook;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,8 +13,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fIndex;
     private Fragment fWordsList;
     private Fragment fReading;
+    private Fragment fWordDetail;
     private Fragment fMe;
-    SearchView searchView;
+    private SearchView searchView;
+    private FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
         fIndex = new Index();
         fWordsList = new WordFragment();
+        fReading = new SentenceFragment();
+
 
         index = (TextView) findViewById(R.id.index);
         wordsList = (TextView) findViewById(R.id.open_book);
         reading = (TextView) findViewById(R.id.reading);
-        me = (TextView) findViewById(R.id.me);
-        searchView = (SearchView)findViewById(R.id.searchview);
+    //    me = (TextView) findViewById(R.id.me);
+        searchView = (SearchView) findViewById(R.id.searchview);
+        frameLayout = (FrameLayout) findViewById(R.id.container1);
 
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
         ft.add(R.id.container, fIndex, "index").commit();
+
+        if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            frameLayout.setLayoutParams(new LinearLayout.LayoutParams(0, 0, 0f));
+            fWordDetail = new DetailFragment();
+        }
 
         moreAction();
 
@@ -60,10 +75,30 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 fm = getSupportFragmentManager();
                 ft = fm.beginTransaction();
-                if (fm.findFragmentByTag("wordslist") == null) {
-                    ft.add(R.id.container, fWordsList, "wordslist").commit();
+
+                if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    frameLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+
+                    if (fm.findFragmentByTag("wordslist") == null) {
+                        ft.add(R.id.container, fWordsList, "wordslist");
+                    } else {
+                        ft.replace(R.id.container, fWordsList, "wordslist");
+                    }
+                    if (fm.findFragmentByTag("worddetail") == null) {
+                        ft.add(R.id.container1, fWordDetail, "worddetail");
+                    } else {
+                        ft.replace(R.id.container1, fWordDetail, "worddetail");
+                    }
+                    ft.commit();
+
                 } else {
-                    ft.replace(R.id.container, fWordsList, "wordslist").commit();
+                    if (fm.findFragmentByTag("wordslist") == null) {
+                        ft.add(R.id.container, fWordsList, "wordslist").commit();
+                    } else {
+                        ft.replace(R.id.container, fWordsList, "wordslist").commit();
+                    }
                 }
             }
         });
@@ -74,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
                 fm = getSupportFragmentManager();
                 ft = fm.beginTransaction();
 
+                if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    frameLayout.setLayoutParams(new LinearLayout.LayoutParams(0, 0, 0f));
+                }
+
                 if (fm.findFragmentByTag("index") == null) {
                     ft.add(R.id.container, fIndex, "index").commit();
                 } else {
@@ -82,17 +121,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        me.setOnClickListener(new View.OnClickListener() {
+
+        reading.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fm = getSupportFragmentManager();
+                ft = fm.beginTransaction();
+
+                if (getApplicationContext().getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    frameLayout.setLayoutParams(new LinearLayout.LayoutParams(0, 0, 0f));
+                }
+
+                if (fm.findFragmentByTag("sentence") == null) {
+                    ft.add(R.id.container, fReading, "sentence").commit();
+                } else {
+                    ft.replace(R.id.container, fReading, "sentence").commit();
+                }
+            }
+        });
+
+
+        /*me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     Thread thread = new Thread(new Translate("good"));
                     thread.start();
                     Log.v("RRRRRRRes", Translate.getRes());
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
     }
 }

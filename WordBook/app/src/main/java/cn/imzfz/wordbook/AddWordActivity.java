@@ -31,7 +31,7 @@ public class AddWordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.edit_word);
+        setContentView(R.layout.add_word);
         newWord = (EditText)findViewById(R.id.editword);
         newMean = (EditText)findViewById(R.id.editmean);
         newPhonetic = (TextView)findViewById(R.id.editphonetic);

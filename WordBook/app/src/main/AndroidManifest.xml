@@ -27,10 +27,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditWordActivity">
-        </activity>
-        <activity android:name=".AddWordActivity">
-        </activity>
+        <activity android:name=".EditWordActivity" />
+        <activity android:name=".AddWordActivity" />
+
+        <service
+            android:name=".Pronounce"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

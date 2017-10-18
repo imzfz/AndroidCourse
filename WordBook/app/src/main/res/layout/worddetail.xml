@@ -11,29 +11,24 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#3d706e"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:background="#3d706e">
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="编辑单词"
-            android:textSize="20sp" />
-
+            android:text="单词详情"
+            android:textSize="20sp"/>
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <TextView
             android:id="@+id/editword_text"
@@ -44,14 +39,14 @@
             android:text="单词"
             android:textColor="#000000" />
 
-        <EditText
+        <TextView
             android:id="@+id/editword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:maxLines="1"
             android:text=""
+            android:maxLines="1"
             android:textColor="#000000" />
     </LinearLayout>
 
@@ -59,8 +54,8 @@
         android:id="@+id/line2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line1">
@@ -80,8 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:maxLines="1"
             android:text=""
+            android:maxLines="1"
             android:textColor="#000000" />
     </LinearLayout>
 
@@ -89,8 +84,8 @@
         android:id="@+id/line3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line2">
@@ -115,12 +110,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/l1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_margin="5dp"
         android:gravity="end"
-        android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line3">
@@ -129,17 +123,18 @@
             android:id="@+id/getInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="获取网络信息" />
+            android:text="获取网络信息"
+            />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
         android:orientation="horizontal"
+        android:layout_margin="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/l1">
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:id="@+id/edit_btn_cancle"
@@ -159,5 +154,4 @@
             android:text="确认"
             android:textColor="#000000" />
     </LinearLayout>
-
 </android.support.constraint.ConstraintLayout>
