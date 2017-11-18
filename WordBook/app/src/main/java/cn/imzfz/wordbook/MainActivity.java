@@ -3,6 +3,8 @@ package cn.imzfz.wordbook;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.net.Uri;
+import android.provider.BaseColumns;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment fMe;
     private SearchView searchView;
     private FrameLayout frameLayout;
+    public static final String AUTHORITY = "cn.imzfz.wordbook";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         index = (TextView) findViewById(R.id.index);
         wordsList = (TextView) findViewById(R.id.open_book);
         reading = (TextView) findViewById(R.id.reading);
-    //    me = (TextView) findViewById(R.id.me);
+        //    me = (TextView) findViewById(R.id.me);
         searchView = (SearchView) findViewById(R.id.searchview);
         frameLayout = (FrameLayout) findViewById(R.id.container1);
 
@@ -67,6 +70,20 @@ public class MainActivity extends AppCompatActivity {
         moreAction();
 
     }
+
+    public static abstract class Word implements BaseColumns {
+        public static final String TABLE_NAME = "words";
+        public static final String MIME_DIR_PREFIX = "vnd.android.cursor.dir";
+        public static final String MIME_ITEM_PREFIX = "vnd.android.cursor.item";
+        public static final String MINE_ITEM = "vnd.cn.imzfz.wordbook";
+        public static final String MINE_TYPE_SINGLE = MIME_ITEM_PREFIX + "/" + MINE_ITEM;
+        public static final String MINE_TYPE_MULTIPLE = MIME_DIR_PREFIX + "/" + MINE_ITEM;
+        public static final String PATH_SINGLE = "words/#";
+        public static final String PATH_MULTIPLE = "words";
+        public static final String CONTENT_URI_STRING = "content://" + AUTHORITY + "/" + PATH_MULTIPLE;
+        public static final Uri CONTENT_URI = Uri.parse(CONTENT_URI_STRING);
+    }
+
 
     //注册众多监听事件
     public void moreAction() {

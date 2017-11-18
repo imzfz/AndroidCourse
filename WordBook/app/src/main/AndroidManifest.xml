@@ -23,15 +23,27 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditWordActivity" />
+        <activity android:name=".EditWordActivity"
+            android:label="添加到单词本">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
         <activity android:name=".AddWordActivity" />
 
         <service
             android:name=".Pronounce"
+            android:enabled="true"
+            android:exported="true" />
+
+        <provider
+            android:name=".MyContentProvider"
+            android:authorities="cn.imzfz.wordbook"
             android:enabled="true"
             android:exported="true" />
     </application>
