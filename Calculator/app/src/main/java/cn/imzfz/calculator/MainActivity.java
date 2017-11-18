@@ -11,11 +11,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-   /* TextView textView;
-    Logic logic;
-    String inputText, viewText;
-    KeyView acKey;*/
-
     Logic_New logic;
     TextView textView;
     String inputText = "", nowText = "0";
@@ -24,12 +19,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        /*logic = new Logic();
-        textView = (TextView) findViewById(R.id.display);
-        viewText = textView.getText().toString();
-        acKey = (KeyView) findViewById(R.id.ac);*/
 
         logic = new Logic_New(getApplicationContext());
         textView = (TextView) findViewById(R.id.display);

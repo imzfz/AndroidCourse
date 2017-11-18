@@ -79,7 +79,9 @@ public class InterNet extends Rate implements Runnable {
 
             }
         });*/
+    }
 
+    public void moreAction(){
         price1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -88,12 +90,12 @@ public class InterNet extends Rate implements Runnable {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                cal();
+
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
-
+                cal();
             }
         });
     }
@@ -101,6 +103,7 @@ public class InterNet extends Rate implements Runnable {
     @Override
     public void run() {
         connect();
+//        moreAction();
     }
 
 
@@ -128,6 +131,7 @@ public class InterNet extends Rate implements Runnable {
 
             Log.v("result", res);
 
+            Thread.sleep(2000);
             price2.setText(middle);
             inn.close();
             outt.close();

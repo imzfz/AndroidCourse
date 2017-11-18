@@ -60,7 +60,7 @@ public class KeyView extends android.support.v7.widget.AppCompatTextView {
                 Log.v("Move", "" + y + "  " + endy);
                 if(Math.abs(endy - y) > 500 && block == 0) {
                     block = 1;
-        //            Intent intent = new Intent(getContext(), Exchange.class);
+        //             Intent intent = new Intent(getContext(), Exchange.class);
                     Intent intent = new Intent(getContext(), Hex.class);
                     getContext().startActivity(intent);
                     Log.v("Fragment", "done");
